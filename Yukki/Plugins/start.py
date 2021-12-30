@@ -21,14 +21,14 @@ from Yukki.YukkiUtilities.database.sudo import (get_sudoers, get_sudoers, remove
 def start_pannel():  
     buttons  = [
             [
-                InlineKeyboardButton(text="📚 Commands", url="https://telegra.ph/ҡʏʏ-ᴇx-12-15")
+                InlineKeyboardButton(text="📚 Commands", url="https://telegra.ph/%E1%B4%8B%CA%8F%CA%8F%E1%B4%98%CA%8F-12-30")
             ],
             [ 
                 InlineKeyboardButton(text="📣 Channel", url="https://t.me/kyyproject"),
                 InlineKeyboardButton(text="💭 Group", url="https://t.me/vieenasupport")
             ],
     ]
-    return "✨  **Welcome to veez music mega bot.**", buttons
+    return "✨  **Welcome to _VIEENA BOT A.I_.**", buttons
 
 pstart_markup=InlineKeyboardMarkup(
             [
@@ -37,7 +37,7 @@ pstart_markup=InlineKeyboardMarkup(
                         "➕ Add me to a Group ➕", url="https://t.me/vieenarobot?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                        "📚 Commands", url="https://telegra.ph/ҡʏʏ-ᴇx-12-15"),
+                        "📚 Commands", url="https://telegra.ph/%E1%B4%8B%CA%8F%CA%8F%E1%B4%98%CA%8F-12-30"),
                     InlineKeyboardButton(
                         "♥️ Owner", url="https://t.me/zxcskyy")
                 ]
