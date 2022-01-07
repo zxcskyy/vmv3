@@ -1,9 +1,15 @@
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import (
+    InlineKeyboardButton, 
+    InlineKeyboardMarkup,
+)
 
-from Yukki import SUDOERS, app
-from Yukki.config import LOG_GROUP_ID
-from Yukki.YukkiUtilities.helpers.filters import command
+from Yukki import (
+    BOT_USERNAME, 
+    SUDOERS, 
+    app, 
+    LOG_GROUP_ID,
+)
 
 
 def get_text(message) -> [None, str]:
@@ -18,12 +24,11 @@ def get_text(message) -> [None, str]:
         return None
 
 
-
 OWNER_NAME = "ᴋʏʏ.ᴇx"
 OWNER_USERNAME = "zxcskyy"
 
 
-@app.on_message(command(["bug"]) & filters.group)
+@app.on_message(filters.command(["bug", f"bug@{BOT_USERNAME}"]) & filters.group)
 async def bug(_, message):
     report = get_text(message)
     if message.chat.username:
@@ -63,14 +68,14 @@ async def bug(_, message):
     )
 
 
-@app.on_message(command(["send"]) & filters.user(SUDOERS))
+@app.on_message(filters.command(["send", f"send@{BOT_USERNAME}"]) & filters.user(SUDOERS))
 async def send(_, message):
     text = get_text(message)
     texting = message.reply_to_message
     await app.send_message(text, texting.text)
 
 
-@app.on_message(command(["rsend"]) & filters.user(SUDOERS))
+@app.on_message(filters.command(["rsend", f"rsend@{BOT_USERNAME}"]) & filters.user(SUDOERS))
 async def rsend(_, message):
     text = get_text(message)
     stickers = message.reply_to_message
